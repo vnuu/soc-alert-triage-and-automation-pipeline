@@ -4,7 +4,7 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 
 ---
 
-## 🛠️ Tools & Technologies
+## Tools & Technologies
 
 - **Windows 10 VM** with Sysmon
 - **Wazuh** (SIEM)
