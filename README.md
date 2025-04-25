@@ -11,6 +11,6 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 - **Shuffle** (SOAR automation)
 - **TheHive** (Case management)
 - **VirusTotal API** (Reputation checking)
-- Ubuntu 22.04 Cloud VMs for hosting Wazuh, TheHive, and Shuffle
+- Ubuntu 22.04 Cloud VMs for hosting Wazuh and TheHive servers
 
 ---
