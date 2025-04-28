@@ -15,7 +15,7 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 
 ---
 
-## Part 1: Windows 10 VM and Sysmon Installation
+## Part 1: Windows 10 VM Installation and Configuration
 
 ### 1. Setting Up the Windows 10 Virtual Machine in VirtualBox
 
@@ -29,7 +29,15 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 
 #### 1.2 Create a New Windows 10 Virtual Machine
 1. Open **VirtualBox** and click **New** to start creating a new VM.
-2. Name the VM (e.g., "Windows10-SOC") and select **Windows 10** as the operating system version.
-3. Allocate **4GB of RAM** (minimum) and **20GB of disk space** (recommended: 8GB RAM, 30GB disk).
+2. Name the VM (e.g., "Windows10") and select **Windows 10** as the operating system version.
+3. Allocate **4GB of RAM** (minimum) and **20GB of disk space** (recommended: 8GB RAM, 50GB disk).
 4. Select **Create a virtual hard disk now** and choose **VDI (VirtualBox Disk Image)** format with **Dynamically allocated** storage.
 5. Click **Create** to finalize the VM creation.
+6. Select the Windows 10 Virtual Machine and click **Start**.
+
+![image](https://github.com/user-attachments/assets/506d1411-27de-4d89-bfc7-c055f131641e)
+
+#### 1.2 Create a New Windows 10 Virtual Machine
+
+
+
