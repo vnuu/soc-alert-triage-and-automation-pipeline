@@ -24,6 +24,7 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 #### 1.1 Install VirtualBox
 1. Download and install **VirtualBox** from [VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads).
 2. Follow the installation instructions specific to your operating system (Windows, macOS, or Linux).
+   
 ![image](https://github.com/user-attachments/assets/2d9c2ff8-adab-4eb7-892b-7e5dea98cf99)
 
 #### 1.2 Create a New Windows 10 Virtual Machine
