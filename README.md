@@ -33,7 +33,7 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 3. Allocate **4GB of RAM** (minimum) and **20GB of disk space** (recommended: 8GB RAM, 50GB disk).
 4. Select **Create a virtual hard disk now** and choose **VDI (VirtualBox Disk Image)** format with **Dynamically allocated** storage.
 5. Click **Create** to finalize the VM creation.
-6. Select the Windows 10 Virtual Machine and click **Start**.
+6. Select the Windows 10 Virtual Machine and click **Start** to run the VM.
 
 ![image](https://github.com/user-attachments/assets/506d1411-27de-4d89-bfc7-c055f131641e)
 
