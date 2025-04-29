@@ -77,6 +77,10 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 ```powershell
    .\Sysmon64.exe -i sysmonconfig.xml
 ```
-
+4. Verify that Sysmon is Running
+```powershell
+   Get-Service Sysmon64
+```
+5. Verify Sysmon logs in Event Viewer
 
 
