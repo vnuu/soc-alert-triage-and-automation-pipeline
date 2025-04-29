@@ -37,13 +37,28 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 
 ![image](https://github.com/user-attachments/assets/506d1411-27de-4d89-bfc7-c055f131641e)
 
-### 2. Installing Sysmon 
+### 2. Setting up Sysmon on Windows 10 VM 
 
 **Sysmon** is installed to generate detailed Windows event logs like process creation, network connections, and file changes. In this project, it's used to capture security events when tools like Mimikatz are run, so Wazuh can detect them and automate responses through TheHive and Shuffle.
 
-#### 2.1 Download Sysmon and the Sysmon Configuration File
+#### 2.1 Download Sysmon
 
 1. Download Sysmon from https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon
-2. 
+2. Click on the **Download Sysmon** link to download a ZIP file.
+3. Extract the contents of the ZIP file to a folder, for example: `C:\Tools\Sysmon`
+4. The extracted files should include:
+     - `Sysmon.exe` (32-bit)
+     - `Sysmon64.exe` (64-bit)
+     - License agreement text file
+
+#### 2.2 Download Sysmon Configuration File
+
+1. Head to https://github.com/olafhartong/sysmon-modular
+2. To download the configuration:
+     - Open the repository and locate the file `sysmonconfig.xml`
+     - Click the file, then click the **Raw** button
+     - Right-click anywhere on the page and choose **Save As**
+     - Save the file as `sysmonconfig.xml` in your Sysmon folder, e.g., `C:\Tools\Sysmon`
+
 
 
