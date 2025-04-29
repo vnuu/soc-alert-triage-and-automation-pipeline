@@ -61,9 +61,15 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
      - Click the file, then click the **Raw** button
      - Right-click anywhere on the page and choose **Save As**
      - Save the file as `sysmonconfig.xml` in your Sysmon folder, e.g., `C:\Downloads\Sysmon`
-3. The Sysmon folder should now look like this:
+
+- **The Sysmon folder should now look like this:**
 
 ![image](https://github.com/user-attachments/assets/96ec249f-129b-476d-be6a-4aa09b07efa3)
 
+#### 2.3 Running Sysmon via Powershell
 
+1. Open Powershell as Administrator
+2. In Powershell, navigate to the folder where Sysmon was located
+```powershell
+   cd "C:\Tools\Sysmon"
 
