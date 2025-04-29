@@ -71,5 +71,12 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 1. Open Powershell as Administrator
 2. In Powershell, navigate to the folder where Sysmon was located
 ```powershell
-   cd "C:\Tools\Sysmon"
+   cd "C:\Downloads\Sysmon"
+```
+3. Run Sysmon with the Configuration File
+```powershell
+   .\Sysmon64.exe -i sysmonconfig.xml
+```
+
+
 
