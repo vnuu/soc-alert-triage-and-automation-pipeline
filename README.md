@@ -25,7 +25,7 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 1. Download and install **VirtualBox** from [VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads).
 2. Follow the installation instructions specific to your operating system (Windows, macOS, or Linux).
 
--Virtualbox Downloads Page
+-**Virtualbox Downloads Page**
 ![image](https://github.com/user-attachments/assets/2d9c2ff8-adab-4eb7-892b-7e5dea98cf99)
 
 #### 1.2 Create a New Windows 10 Virtual Machine
@@ -36,7 +36,7 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 5. Click **Create** to finalize the VM creation.
 6. Select the Windows 10 Virtual Machine and click **Start** to run the VM.
 
-- Windows 10 Virtual Machine Running
+- **Windows 10 Virtual Machine Running**
 ![image](https://github.com/user-attachments/assets/506d1411-27de-4d89-bfc7-c055f131641e)
 
 ### 2. Setting up Sysmon on Windows 10 VM 
@@ -60,7 +60,9 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
      - Open the repository and locate the file `sysmonconfig.xml`
      - Click the file, then click the **Raw** button
      - Right-click anywhere on the page and choose **Save As**
-     - Save the file as `sysmonconfig.xml` in your Sysmon folder, e.g., `C:\Tools\Sysmon`
+     - Save the file as `sysmonconfig.xml` in your Sysmon folder, e.g., `C:\Downloads\Sysmon`
+3. The Sysmon folder should now look like this:
+![image](https://github.com/user-attachments/assets/96ec249f-129b-476d-be6a-4aa09b07efa3)
 
 
 
