@@ -82,4 +82,8 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 ```
 5. Verify Sysmon logs in Event Viewer
 
+- Go to:
+```Settings
+   Applications and Services Logs > Microsoft > Windows > Sysmon > Operational
+```
 
