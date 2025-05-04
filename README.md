@@ -56,11 +56,18 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 #### 2.2 Download Sysmon Configuration File
 
 1. Head to https://github.com/olafhartong/sysmon-modular
-2. To download the configuration:
-     - Open the repository and locate the file `sysmonconfig.xml`
-     - Click the file, then click the **Raw** button
-     - Right-click anywhere on the page and choose **Save As**
-     - Save the file as `sysmonconfig.xml` in your Sysmon folder, e.g., `C:\Downloads\Sysmon`
+2. Open the repository and locate the file `sysmonconfig.xml`
+   
+![image](https://github.com/user-attachments/assets/19b13abb-5f86-4309-bb73-0f36922d9e6c)
+
+3. Click the file, then click the **Raw** button
+4. Right-click anywhere on the page and choose **Save As**
+
+![image](https://github.com/user-attachments/assets/e5dc63da-979b-4d6f-b8a9-14a0459c2d36)
+
+5. Save the file as `sysmonconfig.xml` in your Sysmon folder, e.g., `C:\Downloads\Sysmon`
+
+![image](https://github.com/user-attachments/assets/5da2b935-79ff-4fae-8450-d398cd63481b)
 
 - **The Sysmon folder should now look like this:**
 
