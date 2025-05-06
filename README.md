@@ -90,5 +90,6 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 ```Settings
    Applications and Services Logs > Microsoft > Windows > Sysmon > Operational
 ```
-![image](https://github.com/user-attachments/assets/bb8a900a-6dd3-4435-9eb0-dc9ede15f032)
+![image](https://github.com/user-attachments/assets/69e4bc39-6727-4931-a485-9eb6be50ca22)
+
 
