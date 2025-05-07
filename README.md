@@ -41,6 +41,8 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 
 #### 1.3 Download Sysmon
 
+**Sysmon** is installed to generate detailed Windows event logs like process creation, network connections, and file changes. In this project, it's used to capture security events when Mimikatz is run, so Wazuh can detect it and automate responses through TheHive and Shuffle.
+
 1. Download Sysmon from https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon
 2. Click on the **Download Sysmon** link to download a ZIP file.
 3. Extract the contents of the ZIP file to a folder, for example: `C:\Tools\Sysmon`
