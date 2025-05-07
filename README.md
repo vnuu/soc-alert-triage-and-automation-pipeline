@@ -25,6 +25,7 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 2. Follow the installation instructions specific to your operating system (Windows, macOS, or Linux).
 
 - **Virtualbox Downloads Page**
+
 ![image](https://github.com/user-attachments/assets/2d9c2ff8-adab-4eb7-892b-7e5dea98cf99)
 
 #### 1.2 Create a New Windows 10 Virtual Machine
@@ -36,6 +37,7 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 6. Select the Windows 10 Virtual Machine and click **Start** to run the VM.
 
 - **Windows 10 Virtual Machine Running**
+
 ![image](https://github.com/user-attachments/assets/506d1411-27de-4d89-bfc7-c055f131641e)
 
 
