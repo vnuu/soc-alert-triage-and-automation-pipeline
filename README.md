@@ -18,7 +18,7 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 
 ### 1. Installing and Configuring Windows 10 VM 
 
-**VirtualBox** is a free and open-source virtualization tool that enables you to create and run virtual machines on your computer. Follow the steps below to create and configure a Windows 10 VM.
+**VirtualBox** is a free and open-source virtualization tool that enables you to create and run virtual machines on your computer.
 
 #### 1.1 Install VirtualBox
 1. Download and install **VirtualBox** from [VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads).
