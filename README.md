@@ -14,11 +14,11 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 
 ---
 
-## Part 1: Initial Setup and Configuration
+## Part 1: Applications and Virtual Machines Installation
 
 ### 1. Installing and Configuring Windows 10 VM 
 
-**VirtualBox** is a free and open-source virtualization tool that enables you to create and run virtual machines on your computer.
+**VirtualBox** is a free and open-source virtualization tool that enables you to create and run virtual machines on your computer. It is used to run the Windows 10 VM, which will act as the endpoint.
 
 #### 1.1 Install VirtualBox
 1. Download and install **VirtualBox** from [VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads).
@@ -94,4 +94,5 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 
 
 ### 2. Setting Up Wazuh and TheHive
+
 
