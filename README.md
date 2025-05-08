@@ -16,7 +16,7 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 
 ## Part 1: Applications and Virtual Machines Installation
 
-### 1. Installing and Configuring Windows 10 VM 
+### 1. Installing and Configuring Windows 10 Virtual Machines
 
 **VirtualBox** is a free and open-source virtualization tool that enables you to create and run virtual machines on your computer. It is used to run the Windows 10 VM, which will act as the endpoint.
 
@@ -93,6 +93,11 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 ![image](https://github.com/user-attachments/assets/69e4bc39-6727-4931-a485-9eb6be50ca22)
 
 
-### 2. Setting Up Wazuh and TheHive
+### 2. Setting Up Wazuh and TheHive Virtual Machines
 
+In this project, two VMs were created and hosted in the cloud using DigitalOcean, one for Wazuh and one for TheHive. A firewall was applied to each Droplet, allowing only the necessary ports to access the VMs.
 
+#### 2.1 Setting Up Droplets in DigitalOcean
+
+1. Head to https://www.digitalocean.com/ and sign up for an account.
+2. 
