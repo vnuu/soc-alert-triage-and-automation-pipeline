@@ -20,9 +20,10 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 
 To simulate real-world attacker and endpoint behavior, a dedicated Windows 10 virtual machine (VM) was provisioned. This endpoint serves as the telemetry source in the lab, designed to generate logs and security events for collection, detection, and triage via Wazuh and TheHive.
 
+#### 1.1 Install VirtualBox
+
 **VirtualBox** is a free and open-source virtualization tool that enables you to create and run virtual machines on your computer. It is used to run the Windows 10 VM, which will act as the endpoint.
 
-#### 1.1 Install VirtualBox
 1. Download and install **VirtualBox** from [VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads).
 2. Follow the installation instructions specific to your operating system (Windows, macOS, or Linux).
 
