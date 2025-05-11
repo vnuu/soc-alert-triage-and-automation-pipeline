@@ -32,7 +32,8 @@ To simulate real-world attacker and endpoint behavior, a dedicated Windows 10 vi
 - **Disk Space: 30GB**
 - **OS: Windows 10 (64 Bit)**
 
-- **Windows 10 Virtual Machine Running**
+![image](https://github.com/user-attachments/assets/02727a8e-094e-402e-b278-f144f774b610)
+
 
 ![image](https://github.com/user-attachments/assets/506d1411-27de-4d89-bfc7-c055f131641e)
 
