@@ -20,26 +20,17 @@ The goal of this project is to design and implement a fully automated SOC alert 
 
 ---
 
-## Installation
+## Lab Setup
 
-### 1. Endpoint Preparation (Windows 10 VM)
+### 1. Windows 10 VM 
 
-To simulate real-world attacker and endpoint behavior, a dedicated Windows 10 virtual machine (VM) was provisioned. This endpoint serves as the telemetry source in the lab, designed to generate logs and security events for collection, detection, and triage via Wazuh and TheHive.
+To simulate real-world attacker and endpoint behavior, a dedicated Windows 10 virtual machine (VM) was provisioned using VirtualBox. This endpoint serves as the telemetry source in the lab, designed to generate logs and security events for collection, detection, and triage via Wazuh and TheHive.
 
-#### 1.1 Install VirtualBox
+**Virtual Machine Settings**
 
-**VirtualBox** is a free and open-source virtualization tool that enables you to create and run virtual machines on your computer. It is used to run the Windows 10 VM, which will act as the endpoint.
-
-1. Download and install **VirtualBox** from [VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads).
-2. Follow the installation instructions specific to your operating system (Windows, macOS, or Linux).
-
-#### 1.2 Create a New Windows 10 Virtual Machine
-1. Open **VirtualBox** and click **New** to start creating a new VM.
-2. Name the VM (e.g., "Windows10") and select **Windows 10** as the operating system version.
-3. Allocate **4GB of RAM** (minimum) and **20GB of disk space** (recommended: 8GB RAM, 50GB disk).
-4. Select **Create a virtual hard disk now** and choose **VDI (VirtualBox Disk Image)** format with **Dynamically allocated** storage.
-5. Click **Create** to finalize the VM creation.
-6. Select the Windows 10 Virtual Machine and click **Start** to run the VM.
+- **RAM: 8GB**
+- **Disk Space: 30GB**
+- **OS: Windows 10 (64 Bit)**
 
 - **Windows 10 Virtual Machine Running**
 
