@@ -24,13 +24,24 @@ The goal of this project is to design and implement a fully automated SOC alert 
 
 ### 1. Windows 10 VM 
 
-To simulate real-world attacker and endpoint behavior, a dedicated Windows 10 virtual machine (VM) was provisioned using VirtualBox. This endpoint serves as the telemetry source in the lab, designed to generate logs and security events for collection, detection, and triage via Wazuh and TheHive.
+VirtualBox is used as the hypervisor to run the Windows VM locally.
+
+- [VirtualBox Download](https://www.virtualbox.org/wiki/Downloads)
+- VirtualBox Version: `7.x`
+- Extension Pack: Installed (for additional features like clipboard sharing and USB passthrough)
+
+To simulate real-world attacker and endpoint behavior, a dedicated Windows 10 virtual machine (VM) was created. This endpoint serves as the telemetry source in the lab, designed to generate logs and security events for collection, detection, and triage via Wazuh and TheHive.
 
 **Virtual Machine Settings**
 
-- **RAM: 8GB**
-- **Disk Space: 30GB**
-- **OS: Windows 10 (64 Bit)**
+| Setting        | Value             |
+|----------------|------------------|
+| VM Name        | `WIN10-ENDPOINT` |
+| OS Type        | Windows 10 (64-bit) |
+| Memory         | 8 GB              |
+| vCPUs          | 2                 |
+| Disk Size      | 50 GB (Dynamic)   |
+| Network        | NAT + Host-Only   |
 
 ![image](https://github.com/user-attachments/assets/02727a8e-094e-402e-b278-f144f774b610)
 
