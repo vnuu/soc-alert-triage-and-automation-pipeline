@@ -120,7 +120,7 @@ Allow only your IP address to access all necessary ports over both TCP and UDP p
 
 
 #### Outbound Rules
-Permit full outbound access to enable the VMs to reach external services (e.g., for updates, API access, etc.).
+Permit full outbound access to enable the VMs to reach external services.
 
 - **ICMP**: All destinations (for ping and diagnostics)  
 - **TCP/UDP**: All ports to all IPv4 and IPv6 destinations
