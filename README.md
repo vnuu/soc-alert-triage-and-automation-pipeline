@@ -35,10 +35,7 @@ To simulate real-world attacker and endpoint behavior, a dedicated Windows 10 vi
 ![image](https://github.com/user-attachments/assets/02727a8e-094e-402e-b278-f144f774b610)
 
 
-![image](https://github.com/user-attachments/assets/506d1411-27de-4d89-bfc7-c055f131641e)
-
-
-#### 1.3 Download Sysmon
+**Sysmon**
 
 **Sysmon** is installed to generate detailed Windows event logs like process creation, network connections, and file changes. In this project, it's used to capture security events when Mimikatz is run, so Wazuh can detect it and automate responses through TheHive and Shuffle.
 
@@ -50,7 +47,7 @@ To simulate real-world attacker and endpoint behavior, a dedicated Windows 10 vi
      - `Sysmon64.exe` (64-bit)
      - License agreement text file
 
-#### 1.4 Download Sysmon Configuration File
+**Sysmon Configuration File**
 
 1. Head to https://github.com/olafhartong/sysmon-modular
 2. Open the repository and locate the file `sysmonconfig.xml`
@@ -62,7 +59,7 @@ To simulate real-world attacker and endpoint behavior, a dedicated Windows 10 vi
 
 ![image](https://github.com/user-attachments/assets/96ec249f-129b-476d-be6a-4aa09b07efa3)
 
-#### 1.5 Running Sysmon via Powershell
+**Running Sysmon**
 
 1. Open Powershell as Administrator
 2. In Powershell, navigate to the folder where Sysmon was located
@@ -90,11 +87,32 @@ To simulate real-world attacker and endpoint behavior, a dedicated Windows 10 vi
 ![image](https://github.com/user-attachments/assets/69e4bc39-6727-4931-a485-9eb6be50ca22)
 
 
-### 2. Setting Up Wazuh and TheHive Virtual Machines
+### 2. Wazuh and TheHive
 
-In this project, two VMs were created and hosted in the cloud using DigitalOcean, one for Wazuh and one for TheHive. A firewall was applied to each Droplet, allowing only the necessary ports to access the VMs.
+In this part of the project, two virtual machines (VMs) were set up in DigitalOcean to host Wazuh (for SIEM) and TheHive (for case management). These VMs are configured to communicate with each other securely with only the necessary ports open through firewall rules.
 
-#### 2.1 Setting Up Droplets in DigitalOcean
+**Wazuh and TheHive VM Setup**
 
-1. Head to https://www.digitalocean.com/ and sign up for an account.
-2. 
+### 1. Create DigitalOcean Account
+- Sign up for a DigitalOcean account (or log in if you already have one).
+
+### 2. Create New Droplets (VMs)
+- Go to your DigitalOcean dashboard and click on **Create** → **Droplets**.
+- Choose an image (for both VMs, select Ubuntu 20.04 LTS as the base image).
+- Select a plan (e.g., Standard, 1GB RAM, 1 vCPU).
+- Set up authentication (either SSH keys or password).
+- Click on **Create Droplet**.
+
+### 3. Firewall Configuration
+Once the VMs are created, navigate to **Networking** in the DigitalOcean dashboard.
+- Set up firewall rules to ensure that only necessary ports are accessible for both VMs.
+    - **For Wazuh VM**:
+      - Allow **SSH (22)** for remote access.
+      - Allow **Wazuh ports** (port 1514 for communication with agents).
+      - Allow **HTTPS (443)** for any web interfaces.
+    - **For TheHive VM**:
+      - Allow **SSH (22)** for remote access.
+      - Allow **TheHive web interface ports** (default port is 9000 for HTTP).
+- Apply the firewall to both VMs.
+
+
