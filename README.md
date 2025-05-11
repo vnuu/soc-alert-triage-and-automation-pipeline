@@ -43,6 +43,7 @@ To simulate real-world attacker and endpoint behavior, a dedicated Windows 10 vi
 | Disk Size      | 50 GB (Dynamic)   |
 | Network        | NAT + Host-Only   |
 
+
 ![image](https://github.com/user-attachments/assets/02727a8e-094e-402e-b278-f144f774b610)
 
 
