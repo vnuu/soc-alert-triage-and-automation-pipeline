@@ -106,13 +106,32 @@ In this part of the project, two virtual machines (VMs) were set up in DigitalOc
 ### 3. Firewall Configuration
 Once the VMs are created, navigate to **Networking** in the DigitalOcean dashboard.
 - Set up firewall rules to ensure that only necessary ports are accessible for both VMs.
-    - **For Wazuh VM**:
-      - Allow **SSH (22)** for remote access.
-      - Allow **Wazuh ports** (port 1514 for communication with agents).
-      - Allow **HTTPS (443)** for any web interfaces.
-    - **For TheHive VM**:
-      - Allow **SSH (22)** for remote access.
-      - Allow **TheHive web interface ports** (default port is 9000 for HTTP).
-- Apply the firewall to both VMs.
+#### Inbound Rules
+Configure the firewall to allow incoming traffic only from your specific IP address for the required protocols and ports.
+
+- **Allow inbound traffic from**:
+  - **Source IP**: Your IP address
+  - **Protocol**: TCP
+  - **Port Range**: All ports
+- **Allow inbound traffic from**:
+  - **Source IP**: Your IP address
+  - **Protocol**: UDP
+  - **Port Range**: All ports
+
+#### Outbound Rules
+Configure outbound traffic to allow communication with all IPv4 and IPv6 addresses. This ensures that the VMs can reach external resources, including updates and API calls.
+
+- **Allow outbound traffic to**:
+  - **Protocol**: ICMP (for pings)
+  - **Destination**: All IPv4 and IPv6 addresses
+- **Allow outbound traffic to**:
+  - **Protocol**: TCP
+  - **Port Range**: All ports
+  - **Destination**: All IPv4 and IPv6 addresses
+- **Allow outbound traffic to**:
+  - **Protocol**: UDP
+  - **Port Range**: All ports
+  - **Destination**: All IPv4 and IPv6 addresses
+
 
 
