@@ -103,9 +103,12 @@ In this part of the project, two virtual machines (VMs) were set up in DigitalOc
 - Set up authentication (either SSH keys or password).
 - Click on **Create Droplet**.
 
+![image](https://github.com/user-attachments/assets/7b1aec42-5728-4b3e-bb04-52a4cf40f3f1)
+
+
 ### 3. Firewall Configuration
-Once the VMs are created, navigate to **Networking** in the DigitalOcean dashboard.
-- Set up firewall rules to ensure that only necessary ports are accessible for both VMs.
+Once the VMs are created, navigate to **Networking** in the DigitalOcean dashboard and set up firewall rules to ensure that only necessary ports are accessible for both VMs.
+
 #### Inbound Rules
 Configure the firewall to allow incoming traffic only from your specific IP address for the required protocols and ports.
 
@@ -117,6 +120,9 @@ Configure the firewall to allow incoming traffic only from your specific IP addr
   - **Source IP**: Your IP address
   - **Protocol**: UDP
   - **Port Range**: All ports
+
+![image](https://github.com/user-attachments/assets/42e39223-e9ca-43e4-87ea-465141d51374)
+
 
 #### Outbound Rules
 Configure outbound traffic to allow communication with all IPv4 and IPv6 addresses. This ensures that the VMs can reach external resources, including updates and API calls.
@@ -133,5 +139,6 @@ Configure outbound traffic to allow communication with all IPv4 and IPv6 address
   - **Port Range**: All ports
   - **Destination**: All IPv4 and IPv6 addresses
 
+![image](https://github.com/user-attachments/assets/cb3cd518-f739-46d4-8419-6d5b571666e3)
 
 
