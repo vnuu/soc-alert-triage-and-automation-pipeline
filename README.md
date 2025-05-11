@@ -14,6 +14,12 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 
 ---
 
+## Objectives
+
+The goal of this project is to design and implement a fully automated SOC alert triage pipeline that integrates endpoint telemetry (via Sysmon) with a cloud-hosted SIEM (Wazuh), SOAR automation (Shuffle), and case management (TheHive) platforms. The pipeline automates the detection, enrichment, and escalation of Mimikatz alerts in a controlled environment, simulating real-world attack scenarios.
+
+---
+
 ## Installation
 
 ### 1. Endpoint Preparation (Windows 10 VM)
