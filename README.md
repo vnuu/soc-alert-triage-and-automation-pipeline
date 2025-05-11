@@ -121,7 +121,7 @@ In this part of the project, two virtual machines (VMs) were set up in DigitalOc
 **Firewall Configuration**
 Once the VMs are created, navigate to **Networking** in the DigitalOcean dashboard and set up firewall rules to ensure that only necessary ports are accessible for both VMs.
 
-- **Inbound Rules:**
+**Inbound Rules:**
 
 Allow only your IP address to access all necessary ports over both TCP and UDP protocols. This restricts unauthorized access while enabling full control from your machine.
 
@@ -132,7 +132,7 @@ Allow only your IP address to access all necessary ports over both TCP and UDP p
 ![image](https://github.com/user-attachments/assets/42e39223-e9ca-43e4-87ea-465141d51374)
 
 
-- **Outbound Rules:**
+**Outbound Rules:**
 
 Permit full outbound access to enable the VMs to reach external services.
 
