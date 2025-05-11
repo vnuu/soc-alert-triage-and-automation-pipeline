@@ -105,23 +105,23 @@ In this part of the project, two virtual machines (VMs) were set up in DigitalOc
 
 ### Wazuh and TheHive VM Setup
 
-1. Create DigitalOcean Account
+**DigitalOcean Account**
 - Sign up for a DigitalOcean account (or log in if you already have one).
 
-2. Create New Droplets (VMs)
-- Go to your DigitalOcean dashboard and click on **Create** → **Droplets**.
-- Choose an image (for both VMs, select Ubuntu 20.04 LTS as the base image).
-- Select a plan (e.g., Standard, 1GB RAM, 1 vCPU).
-- Set up authentication (either SSH keys or password).
-- Click on **Create Droplet**.
+**Create New Droplets (VMs)**
+1. Go to your DigitalOcean dashboard and click on **Create** → **Droplets**.
+2. Choose an image (for both VMs, select Ubuntu 20.04 LTS as the base image).
+3. Select a plan (e.g., Standard, 1GB RAM, 1 vCPU).
+4. Set up authentication (either SSH keys or password).
+5. Click on **Create Droplet**.
 
 ![image](https://github.com/user-attachments/assets/7b1aec42-5728-4b3e-bb04-52a4cf40f3f1)
 
 
-3. Firewall Configuration
+**Firewall Configuration**
 Once the VMs are created, navigate to **Networking** in the DigitalOcean dashboard and set up firewall rules to ensure that only necessary ports are accessible for both VMs.
 
-**Inbound Rules:**
+- **Inbound Rules:**
 
 Allow only your IP address to access all necessary ports over both TCP and UDP protocols. This restricts unauthorized access while enabling full control from your machine.
 
@@ -132,7 +132,7 @@ Allow only your IP address to access all necessary ports over both TCP and UDP p
 ![image](https://github.com/user-attachments/assets/42e39223-e9ca-43e4-87ea-465141d51374)
 
 
-**Outbound Rules:**
+- **Outbound Rules:**
 
 Permit full outbound access to enable the VMs to reach external services.
 
