@@ -103,12 +103,12 @@ To simulate real-world attacker and endpoint behavior, a dedicated Windows 10 vi
 
 In this part of the project, two virtual machines (VMs) were set up in DigitalOcean to host Wazuh (for SIEM) and TheHive (for case management). These VMs are configured to communicate with each other securely with only the necessary ports open through firewall rules.
 
-**Wazuh and TheHive VM Setup**
+### Wazuh and TheHive VM Setup
 
-### 1. Create DigitalOcean Account
+1. Create DigitalOcean Account
 - Sign up for a DigitalOcean account (or log in if you already have one).
 
-### 2. Create New Droplets (VMs)
+2. Create New Droplets (VMs)
 - Go to your DigitalOcean dashboard and click on **Create** → **Droplets**.
 - Choose an image (for both VMs, select Ubuntu 20.04 LTS as the base image).
 - Select a plan (e.g., Standard, 1GB RAM, 1 vCPU).
@@ -118,10 +118,11 @@ In this part of the project, two virtual machines (VMs) were set up in DigitalOc
 ![image](https://github.com/user-attachments/assets/7b1aec42-5728-4b3e-bb04-52a4cf40f3f1)
 
 
-### 3. Firewall Configuration
+3. Firewall Configuration
 Once the VMs are created, navigate to **Networking** in the DigitalOcean dashboard and set up firewall rules to ensure that only necessary ports are accessible for both VMs.
 
-#### Inbound Rules
+**Inbound Rules**
+
 Allow only your IP address to access all necessary ports over both TCP and UDP protocols. This restricts unauthorized access while enabling full control from your machine.
 
 - **Protocol**: TCP & UDP  
@@ -131,7 +132,8 @@ Allow only your IP address to access all necessary ports over both TCP and UDP p
 ![image](https://github.com/user-attachments/assets/42e39223-e9ca-43e4-87ea-465141d51374)
 
 
-#### Outbound Rules
+**Outbound Rules**
+
 Permit full outbound access to enable the VMs to reach external services.
 
 - **ICMP**: All destinations (for ping and diagnostics)  
