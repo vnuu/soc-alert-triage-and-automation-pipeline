@@ -110,34 +110,20 @@ In this part of the project, two virtual machines (VMs) were set up in DigitalOc
 Once the VMs are created, navigate to **Networking** in the DigitalOcean dashboard and set up firewall rules to ensure that only necessary ports are accessible for both VMs.
 
 #### Inbound Rules
-Configure the firewall to allow incoming traffic only from your specific IP address for the required protocols and ports.
+Allow only your IP address to access all necessary ports over both TCP and UDP protocols. This restricts unauthorized access while enabling full control from your machine.
 
-- **Allow inbound traffic from**:
-  - **Source IP**: Your IP address
-  - **Protocol**: TCP
-  - **Port Range**: All ports
-- **Allow inbound traffic from**:
-  - **Source IP**: Your IP address
-  - **Protocol**: UDP
-  - **Port Range**: All ports
+- **Protocol**: TCP & UDP  
+- **Port Range**: All  
+- **Source**: Your IP address (e.g., your home or office public IP)
 
 ![image](https://github.com/user-attachments/assets/42e39223-e9ca-43e4-87ea-465141d51374)
 
 
 #### Outbound Rules
-Configure outbound traffic to allow communication with all IPv4 and IPv6 addresses. This ensures that the VMs can reach external resources, including updates and API calls.
+Permit full outbound access to enable the VMs to reach external services (e.g., for updates, API access, etc.).
 
-- **Allow outbound traffic to**:
-  - **Protocol**: ICMP (for pings)
-  - **Destination**: All IPv4 and IPv6 addresses
-- **Allow outbound traffic to**:
-  - **Protocol**: TCP
-  - **Port Range**: All ports
-  - **Destination**: All IPv4 and IPv6 addresses
-- **Allow outbound traffic to**:
-  - **Protocol**: UDP
-  - **Port Range**: All ports
-  - **Destination**: All IPv4 and IPv6 addresses
+- **ICMP**: All destinations (for ping and diagnostics)  
+- **TCP/UDP**: All ports to all IPv4 and IPv6 destinations
 
 ![image](https://github.com/user-attachments/assets/cb3cd518-f739-46d4-8419-6d5b571666e3)
 
