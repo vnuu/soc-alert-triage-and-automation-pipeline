@@ -385,7 +385,21 @@ systemctl enable thehive
   
 ![wazuhdashboard](https://github.com/user-attachments/assets/b4333f7e-9771-4d51-811c-672db0102aaf)
 
-2. 
+2. Install Wazuh Agent on Windows 10 VM
+- In the Wazuh Dashboard, click on "Add agent"
+- Select the Windows package
+- Set the server address as Wazuh's public IP
+- Assign an agent name (e.g: Win10)
+- Copy the commands and run them with Powershell on the Windows 10 VM
+- Start the wazuh agent service:
+```powershell
+NET START WazuhSvc
+```
+- Check for the agent in the Wazuh dashboard
+
+![wazuh agent installed](https://github.com/user-attachments/assets/13133e77-a3c8-4a7f-ae99-54ebe3d13a22)
+
+
 
 
 
