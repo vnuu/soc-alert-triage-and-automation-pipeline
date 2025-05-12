@@ -146,6 +146,8 @@ Permit full outbound access to enable the VMs to reach external services.
 ssh root@your-wazuh-vm-ip
 ```
 
+![image](https://github.com/user-attachments/assets/31ef8e14-427c-440f-be6d-9421721890da)
+
 2. Update and Upgrade VM
 ```bash
 apt-get update && apt-get upgrade 
