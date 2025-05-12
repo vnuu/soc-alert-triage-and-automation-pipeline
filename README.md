@@ -122,7 +122,6 @@ In this part of the project, two virtual machines (VMs) were set up in DigitalOc
 Once the VMs are created, navigate to **Networking** in the DigitalOcean dashboard and set up firewall rules to ensure that only necessary ports are accessible for both VMs.
 
 **Inbound Rules:**
-
 Allow only your IP address to access all necessary ports over both TCP and UDP protocols. This restricts unauthorized access while enabling full control from your machine.
 
 - **Protocol**: TCP & UDP  
@@ -133,12 +132,18 @@ Allow only your IP address to access all necessary ports over both TCP and UDP p
 
 
 **Outbound Rules:**
-
 Permit full outbound access to enable the VMs to reach external services.
 
 - **ICMP**: All destinations (for ping and diagnostics)  
 - **TCP/UDP**: All ports to all IPv4 and IPv6 destinations
 
 ![image](https://github.com/user-attachments/assets/cb3cd518-f739-46d4-8419-6d5b571666e3)
+
+### Wazuh Installation
+
+1. Use SSH to connect to the Wazuh VM using the public IP.
+```bash
+ssh root@your-wazuh-vm-ip
+```
 
 
