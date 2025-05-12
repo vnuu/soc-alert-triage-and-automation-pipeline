@@ -329,6 +329,7 @@ systemctl enable elasticsearch
 systemctl status elasticsearch
 ```
 
+**TheHive Configuration**
 
 
 
