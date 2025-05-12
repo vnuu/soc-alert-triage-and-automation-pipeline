@@ -1,4 +1,4 @@
-# SOC Alert Automation Pipeline
+![checkallservices](https://github.com/user-attachments/assets/8b754b6d-e622-49de-9db5-479f933b8686)# SOC Alert Automation Pipeline
 
 A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 telemetry (via Sysmon) with cloud-hosted SIEM, SOAR, and case management platforms to automate Mimikatz alert detection, enrichment, and escalation.
 
@@ -350,6 +350,20 @@ nano /etc/thehive/application.conf
 4. Configure service configuration
 
 ![image](https://github.com/user-attachments/assets/e5de8473-5bd6-4f24-ba5b-06d1454d2f25)
+
+5. Start and enable TheHive service
+```bash
+systemctl start thehive
+```
+
+```bash
+systemctl enable thehive
+```
+
+6. Ensure that all 3 services are running
+
+![checkallservices](https://github.com/user-attachments/assets/d8fc9ed8-c893-4968-bcf7-b6a62177c4d3)
+
 
 
 
