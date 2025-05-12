@@ -162,7 +162,7 @@ curl -s https://packages.wazuh.com/4.x/deb/wazuh.repo | tee /etc/apt/sources.lis
 apt-get update
 apt-get install wazuh-manager
 ```
-- *Upon installing the Wazuh Manager, make sure to take note of the username and password. This will be used to log into the Wazuh Dashboard*.
+(*Upon installing the Wazuh Manager, make sure to take note of the username and password. This will be used to log into the Wazuh Dashboard.*)
 
 ![wazuhinstall](https://github.com/user-attachments/assets/ad7df9bc-0f36-4a98-83c8-8fbf94a65326)
 
