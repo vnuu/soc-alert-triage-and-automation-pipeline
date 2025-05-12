@@ -309,7 +309,7 @@ network.host: 209.97.173.238
 
 5. Configure cluster initial master node
 
-(To start Elasticsearch, you must configure either a discovery seed host or specify an initial master node. For this demo setup, we'll use the cluster.initial_master_nodes setting to define the initial master node.)
+(To start Elasticsearch, you must configure either a discovery seed host or specify an initial master node. For this project, we'll use the cluster.initial_master_nodes setting to define the initial master node.)
 ```bash
 cluster.initial_master_nodes: ["node-1"]
 ```
