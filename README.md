@@ -368,7 +368,14 @@ systemctl enable thehive
 
 ![image](https://github.com/user-attachments/assets/1ee0c663-94b0-4ef3-9f96-ca663d8cbb6d)
 
+### Wazuh Configuration
 
+1. Log into Wazuh Dashboard with the administrative credentials.
+- Wazuh Login Screen
+![wazuhlogin](https://github.com/user-attachments/assets/014779c8-0058-4848-8b94-fb42f24132ce)
+
+- Wazuh Dashboard
+![wazuhdashboard](https://github.com/user-attachments/assets/b4333f7e-9771-4d51-811c-672db0102aaf)
 
 
 
