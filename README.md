@@ -139,7 +139,7 @@ Permit full outbound access to enable the VMs to reach external services.
 
 ![image](https://github.com/user-attachments/assets/cb3cd518-f739-46d4-8419-6d5b571666e3)
 
-### Wazuh Installation
+### Wazuh 4.7 Installation
 
 1. Use SSH to connect to the Wazuh VM using the public IP.
 ```bash
@@ -178,7 +178,7 @@ systemctl status wazuh-manager
 ```
 ![image](https://github.com/user-attachments/assets/8635aa1a-80c2-4e92-b6bb-1b1f9c9ff96b)
 
-### TheHive Installation
+### TheHive 5 Installation
 
 1. Use SSH to connect to TheHive VM using the public IP.
 ```bash
@@ -215,6 +215,7 @@ echo "deb [signed-by=/usr/share/keyrings/cassandra-archive.gpg] https://debian.c
 sudo apt update
 sudo apt install cassandra
 ```
+
 6. Install Elasticsearch
 ```bash
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch |  sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
@@ -222,6 +223,39 @@ sudo apt-get install apt-transport-https
 echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/7.x/apt stable main" |  sudo tee /etc/apt/sources.list.d/elastic-7.x.list
 sudo apt update
 sudo apt install elasticsearch
+```
+
+7. Install TheHive
+```bash
+wget -O- https://archives.strangebee.com/keys/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
+echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.2 main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
+sudo apt-get update
+sudo apt-get install -y thehive
+```
+### TheHive 5 Configuration
+
+After installing TheHive, perform the following steps to configure it properly and ensure it's ready to receive alerts and integrate with other tools like Wazuh or Cortex.
+
+1. Locate TheHive's main configuration file
+```bash
+nano /etc/cassandra/cassandra.yaml
+```
+
+2. Configure cluster name
+```bash
+cluster_name: 'vnu'
+```
+**Replace 'venu' with your desired cluster name to ensure it matches the Cassandra cluster configuration.**
+
+3. Set listen_address and rpc_address as the public IP of TheHive
+- Listen Address:
+```bash
+listen_address: 209.97.173.238
+```
+
+- RPC Address:
+```bash
+rpc_address: 209.97.173.238
 ```
 
 
