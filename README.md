@@ -245,7 +245,7 @@ nano /etc/cassandra/cassandra.yaml
 ```bash
 cluster_name: 'vnu'
 ```
-**Replace 'venu' with your desired cluster name to ensure it matches the Cassandra cluster configuration.**
+**Replace 'vnu' with your desired cluster name to ensure it matches the Cassandra cluster configuration.**
 
 3. Set listen_address and rpc_address as the public IP of TheHive
 - Listen Address:
@@ -257,6 +257,33 @@ listen_address: 209.97.173.238
 ```bash
 rpc_address: 209.97.173.238
 ```
+
+4. Configure seed provider
+```bash
+seeds: "209.97.173.238:7000"
+```
+
+5. Stop the Cassandra service
+```bash
+systemctl stop cassandra.service
+```
+
+6. Remove old Cassandra files
+```bash
+rm -rf /var/lib/cassandra/*
+```
+
+7. Start Cassandra service
+```bash
+systemctl start cassandra.service
+```
+
+8. Ensure Cassandra service is running
+```bash
+systemctl status cassandra.service
+```
+
+![image](https://github.com/user-attachments/assets/ea892168-5b12-4ba3-adc7-b2b495124bb1)
 
 
 
