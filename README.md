@@ -105,7 +105,7 @@ In this part of the project, two virtual machines (VMs) were set up in DigitalOc
 
 ### Wazuh and TheHive VM Setup
 
-1. Sign up for a DigitalOcean account (or log in if you already have one).
+1. Sign up for a DigitalOcean account.
 
 2. Create New Droplets (VMs)
 - Go to your DigitalOcean dashboard and click on **Create** → **Droplets**.
