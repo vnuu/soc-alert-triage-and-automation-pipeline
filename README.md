@@ -347,6 +347,9 @@ nano /etc/thehive/application.conf
 
 ![image](https://github.com/user-attachments/assets/165d16a8-44cf-412e-a2ce-957e2a807185)
 
+4. Configure service configuration
+
+![image](https://github.com/user-attachments/assets/e5de8473-5bd6-4f24-ba5b-06d1454d2f25)
 
 
 
