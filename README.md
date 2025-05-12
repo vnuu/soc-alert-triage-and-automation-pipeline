@@ -146,4 +146,32 @@ Permit full outbound access to enable the VMs to reach external services.
 ssh root@your-wazuh-vm-ip
 ```
 
+2. Update and Upgrade VM
+```bash
+apt-get update && apt-get upgrade 
+```
+![update and upgrade](https://github.com/user-attachments/assets/96287d03-bb8b-4e6e-86c5-cc4ff094c924)
+
+4. Install Wazuh Manager
+- Follow the official [Wazuh installation guide](https://documentation.wazuh.com/current/installation-guide/)
+- On the Wazuh VM, run the necessary installation commands:
+```bash
+curl -s https://packages.wazuh.com/4.x/deb/wazuh.repo | tee /etc/apt/sources.list.d/wazuh.list
+apt-get update
+apt-get install wazuh-manager
+```
+4. Start and Enable Wazuh service
+- Start Wazuh:
+```bash
+systemctl start wazuh-manager
+```
+- Enable Wazuh to start on boot:
+```bash
+systemctl enable wazuh-manager
+```
+- Check that Wazuh is running:
+```bash
+systemctl status wazuh-manager
+```
+
 
