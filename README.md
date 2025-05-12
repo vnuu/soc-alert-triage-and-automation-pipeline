@@ -367,6 +367,7 @@ systemctl enable thehive
 7. Log into TheHive's dashboard with the default credentials
 
 **Username: admin@thehive.local**
+
 **Password: secret**
 
 ![image](https://github.com/user-attachments/assets/1ee0c663-94b0-4ef3-9f96-ca663d8cbb6d)
