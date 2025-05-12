@@ -146,13 +146,10 @@ Permit full outbound access to enable the VMs to reach external services.
 ssh root@your-wazuh-vm-ip
 ```
 
-![image](https://github.com/user-attachments/assets/31ef8e14-427c-440f-be6d-9421721890da)
-
 2. Update and Upgrade VM
 ```bash
 apt-get update && apt-get upgrade 
 ```
-![update and upgrade](https://github.com/user-attachments/assets/96287d03-bb8b-4e6e-86c5-cc4ff094c924)
 
 3. Install Wazuh Manager
 - Follow the official [Wazuh installation guide](https://documentation.wazuh.com/current/installation-guide/)
@@ -179,5 +176,51 @@ systemctl enable wazuh-manager
 ```bash
 systemctl status wazuh-manager
 ```
+![image](https://github.com/user-attachments/assets/8635aa1a-80c2-4e92-b6bb-1b1f9c9ff96b)
+
+### TheHive Installation
+
+1. Use SSH to connect to TheHive VM using the public IP.
+```bash
+ssh root@your-thehive-vm-ip
+```
+
+2. Update and Upgrade VM
+```bash
+apt-get update && apt-get upgrade 
+```
+
+3. Install Dependencies
+```bash
+apt install wget gnupg apt-transport-https git ca-certificates ca-certificates-java curl  software-properties-common python3-pip lsb-release
+```
+
+![dependencies](https://github.com/user-attachments/assets/3b295ee8-ef9d-49da-927e-126c4d3d8ab3)
+
+4. Install Java
+```bash
+wget -qO- https://apt.corretto.aws/corretto.key | sudo gpg --dearmor  -o /usr/share/keyrings/corretto.gpg
+echo "deb [signed-by=/usr/share/keyrings/corretto.gpg] https://apt.corretto.aws stable main" |  sudo tee -a /etc/apt/sources.list.d/corretto.sources.list
+sudo apt update
+sudo apt install java-common java-11-amazon-corretto-jdk
+echo JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto" | sudo tee -a /etc/environment 
+export JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto"
+```
+![verifyjava](https://github.com/user-attachments/assets/16625625-c401-4a30-8889-2f2db8887b77)
+
+5. Install Cassandra
+```bash
+wget -qO -  https://downloads.apache.org/cassandra/KEYS | sudo gpg --dearmor  -o /usr/share/keyrings/cassandra-archive.gpg
+echo "deb [signed-by=/usr/share/keyrings/cassandra-archive.gpg] https://debian.cassandra.apache.org 40x main" |  sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
+sudo apt update
+sudo apt install cassandra
+```
+![verifycass](https://github.com/user-attachments/assets/4a4b0dcd-0135-4fc8-907e-0a4a666ffe4a)
+
+
+
+
+
+
 
 
