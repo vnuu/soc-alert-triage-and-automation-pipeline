@@ -338,6 +338,16 @@ chown -R thehive:thehive /opt/thp
 
 ![image](https://github.com/user-attachments/assets/7487ab49-b474-459d-80e3-40efb697f7bc)
 
+2. Locate TheHive configuration file
+```bash
+nano /etc/thehive/application.conf
+```
+
+3. Configure database and index configuration
+
+![image](https://github.com/user-attachments/assets/165d16a8-44cf-412e-a2ce-957e2a807185)
+
+
 
 
 
