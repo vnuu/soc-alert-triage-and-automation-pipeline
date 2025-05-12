@@ -365,18 +365,27 @@ systemctl enable thehive
 ![checkallservices](https://github.com/user-attachments/assets/d8fc9ed8-c893-4968-bcf7-b6a62177c4d3)
 
 7. Log into TheHive's dashboard with the default credentials
+- TheHive Login Screen
 
 ![image](https://github.com/user-attachments/assets/1ee0c663-94b0-4ef3-9f96-ca663d8cbb6d)
 
-### Wazuh Configuration
+- TheHive Dashboard
+
+![image](https://github.com/user-attachments/assets/595f05f4-6455-4881-8c7e-d9fa88430ec3)
+
+
+### Wazuh 4.7 Configuration
 
 1. Log into Wazuh Dashboard with the administrative credentials.
 - Wazuh Login Screen
+  
 ![wazuhlogin](https://github.com/user-attachments/assets/014779c8-0058-4848-8b94-fb42f24132ce)
 
 - Wazuh Dashboard
+  
 ![wazuhdashboard](https://github.com/user-attachments/assets/b4333f7e-9771-4d51-811c-672db0102aaf)
 
+2. 
 
 
 
