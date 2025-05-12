@@ -152,14 +152,13 @@ apt-get update && apt-get upgrade
 ```
 
 3. Install Wazuh Manager
-- Follow the official [Wazuh installation guide](https://documentation.wazuh.com/current/installation-guide/)
 - On the Wazuh VM, run the necessary installation commands:
 ```bash
 curl -s https://packages.wazuh.com/4.x/deb/wazuh.repo | tee /etc/apt/sources.list.d/wazuh.list
 apt-get update
 apt-get install wazuh-manager
 ```
-(*Upon installing the Wazuh Manager, make sure to take note of the username and password. This will be used to log into the Wazuh Dashboard.*)
+(*Upon installing the Wazuh Manager, be sure to take note of the *username* and *password*. This will be used as the credentials to log into the Wazuh Dashboard.*)
 
 ![wazuhinstall](https://github.com/user-attachments/assets/ad7df9bc-0f36-4a98-83c8-8fbf94a65326)
 
