@@ -154,11 +154,12 @@ apt-get update && apt-get upgrade
 3. Install Wazuh Manager
 - On the Wazuh VM, run the necessary installation commands:
 ```bash
-curl -s https://packages.wazuh.com/4.x/deb/wazuh.repo | tee /etc/apt/sources.list.d/wazuh.list
-apt-get update
-apt-get install wazuh-manager
+curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
 ```
-(*Upon installing the Wazuh Manager, be sure to take note of the **username** and **password**. This will be used as the credentials to log into the Wazuh Dashboard.*)
+- Extract Wazuh Credentials (**Be sure to take note of the credentials. These will be used to log into the Wazuh Dashboard**)
+```bash
+sudo tar -xvf wazuh-install-files.tar
+```
 
 ![wazuhinstall](https://github.com/user-attachments/assets/ad7df9bc-0f36-4a98-83c8-8fbf94a65326)
 
@@ -214,7 +215,15 @@ echo "deb [signed-by=/usr/share/keyrings/cassandra-archive.gpg] https://debian.c
 sudo apt update
 sudo apt install cassandra
 ```
-![verifycass](https://github.com/user-attachments/assets/4a4b0dcd-0135-4fc8-907e-0a4a666ffe4a)
+6. Install Elasticsearch
+```bash
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch |  sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
+sudo apt-get install apt-transport-https
+echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/7.x/apt stable main" |  sudo tee /etc/apt/sources.list.d/elastic-7.x.list
+sudo apt update
+sudo apt install elasticsearch
+```
+
 
 
 
