@@ -236,7 +236,9 @@ sudo apt-get install -y thehive
 
 After installing TheHive, perform the following steps to configure it properly and ensure it's ready to receive alerts and integrate with other tools like Wazuh or Cortex.
 
-1. Locate TheHive's main configuration file
+**Cassandra Configuration**
+
+1. Locate Cassandra's configuration file
 ```bash
 nano /etc/cassandra/cassandra.yaml
 ```
@@ -263,7 +265,7 @@ rpc_address: 209.97.173.238
 seeds: "209.97.173.238:7000"
 ```
 
-5. Stop the Cassandra service
+5. Save configuration and stop the Cassandra service
 ```bash
 systemctl stop cassandra.service
 ```
@@ -283,10 +285,48 @@ systemctl start cassandra.service
 systemctl status cassandra.service
 ```
 
-![image](https://github.com/user-attachments/assets/ea892168-5b12-4ba3-adc7-b2b495124bb1)
+**Elasticsearch Configuration**
 
+1. Locate Elasticsearch's main configuration file
+```bash
+nano /etc/elasticsearch/elasticsearch.yml
+```
 
+2. Configure cluster name
+```bash
+cluster.name: vnu
+```
 
+3. Configure node name (Uncomment and set the node.name parameter)
+```bash
+node.name: node-1
+```
+
+4. Configure network host
+```bash
+network.host: 209.97.173.238
+```
+
+5. Configure cluster initial master node
+(To start Elasticsearch, you must configure either a discovery seed host or specify an initial master node. For this demo setup, we'll use the cluster.initial_master_nodes setting to define the initial master node.)
+```bash
+cluster.initial_master_nodes: ["node-1"]
+```
+
+6. Save configuration and start Elasticsearch service
+```bash
+systemctl start elasticsearch
+```
+
+7. Enable Elasticsearch service
+```bash
+systemctl enable elasticsearch
+```
+
+8. Ensure Elasticsearch service is running
+```bash
+systemctl status elasticsearch
+```
 
 
 
