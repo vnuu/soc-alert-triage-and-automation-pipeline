@@ -152,7 +152,7 @@ apt-get update && apt-get upgrade
 ```
 ![update and upgrade](https://github.com/user-attachments/assets/96287d03-bb8b-4e6e-86c5-cc4ff094c924)
 
-4. Install Wazuh Manager
+3. Install Wazuh Manager
 - Follow the official [Wazuh installation guide](https://documentation.wazuh.com/current/installation-guide/)
 - On the Wazuh VM, run the necessary installation commands:
 ```bash
