@@ -331,6 +331,12 @@ systemctl status elasticsearch
 
 **TheHive Configuration**
 
+1. Ensure TheHive user and group has access to "/opt/thp"
+```bash
+chown -R thehive:thehive /opt/thp
+```
+
+![image](https://github.com/user-attachments/assets/7487ab49-b474-459d-80e3-40efb697f7bc)
 
 
 
