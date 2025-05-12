@@ -141,10 +141,6 @@ Permit full outbound access to enable the VMs to reach external services.
 
 ### Wazuh Installation
 
-| RAM            | `WIN10-ENDPOINT` |
-| OS Type        | Windows 10 (64-bit) |
-| Memory         | 8 GB              |
-
 1. Use SSH to connect to the Wazuh VM using the public IP.
 ```bash
 ssh root@your-wazuh-vm-ip
