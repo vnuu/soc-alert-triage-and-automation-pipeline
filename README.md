@@ -389,7 +389,7 @@ systemctl enable thehive
 - In the Wazuh Dashboard, click on "Add agent"
 - Select the Windows package
 - Set the server address as Wazuh's public IP
-- Assign an agent name (e.g: Win10)
+- Assign an agent name (Optional)
 - Copy the commands and run them with Powershell on the Windows 10 VM
 - Start the wazuh agent service:
 ```powershell
