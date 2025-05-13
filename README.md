@@ -407,12 +407,16 @@ NET START WazuhSvc
 
 ![wazuh agent installed](https://github.com/user-attachments/assets/13133e77-a3c8-4a7f-ae99-54ebe3d13a22)
 
+--
 
 ## Telemetry Generation and Ingestion
 
-To simulate a real-world attack scenario, Mimikatz is executed on the Windows 10 VM. Wazuh was configured to collect logs and detect this malicious behavior. This step validated that the system could generate alerts and feed them into the detection pipeline.
+In this part, simulated attack activities were carried out on the Windows 10 virtual machine to produce telemetry data. **Mimikatz** is used to mimic credential theft techniques often seen in real-world attacks. The purpose was to evaluate Wazuh’s detection capabilities by observing how it reacts to suspicious behavior. The Windows VM was configured to forward logs to the Wazuh manager. Wazuh’s built-in ruleset was used to identify malicious patterns in the logs. Once the logs were ingested, alerts were generated and made available for further processing and correlation with TheHive.
 
+1. On the Windows 10 VM, locate the ossec configuration file
+```file
 
+```
 
 
 
