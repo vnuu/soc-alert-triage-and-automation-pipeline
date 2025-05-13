@@ -20,7 +20,9 @@ The goal of this project is to design and implement a fully automated SOC alert 
 
 ---
 
-## Lab Setup
+## Application and VM Setup
+
+In this phase, virtual machines were provisioned to host the core components of the SOC automation stack. This included setting up separate VMs for the Wazuh SIEM server and TheHive incident response platform. Supporting software and dependencies were also installed to ensure all components could run smoothly in an isolated lab environment.
 
 ### 1. Windows 10 VM 
 
@@ -231,6 +233,11 @@ echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https:/
 sudo apt-get update
 sudo apt-get install -y thehive
 ```
+
+## Wazuh and TheHive Configuration
+
+Wazuh was configured as the SIEM solution to detect potential security events based on predefined rules. TheHive was set up to receive alerts from Wazuh via webhooks. This integration ensures that once Wazuh detects suspicious activity, a case is automatically created in TheHive for further analysis and incident management.
+
 ### TheHive 5 Configuration
 
 After installing TheHive, perform the following steps to configure it properly and ensure it's ready to receive alerts and integrate with other tools like Wazuh or Cortex.
@@ -399,6 +406,11 @@ NET START WazuhSvc
 ![wazuh agent installed](https://github.com/user-attachments/assets/13133e77-a3c8-4a7f-ae99-54ebe3d13a22)
 
 
+## Telemetry Generation and Ingestion
 
+To simulate a real-world attack scenario, Mimikatz is executed on the Windows 10 VM. Wazuh was configured to collect logs and detect this malicious behavior. This step validated that the system could generate alerts and feed them into the detection pipeline.
 
+## SOAR Integration & Alert Automation
+
+Shuffle, an open-source SOAR tool, was integrated into the environment to automate alert handling. When Wazuh detects an alert, it is forwarded to TheHive via Shuffle. An automated workflow was created to send email notifications to a designated SOC analyst.
 
