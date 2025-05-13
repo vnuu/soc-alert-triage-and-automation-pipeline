@@ -234,6 +234,7 @@ sudo apt-get update
 sudo apt-get install -y thehive
 ```
 
+
 ## Wazuh and TheHive Configuration
 
 Wazuh was configured as the SIEM solution to detect potential security events based on predefined rules. TheHive was set up to receive alerts from Wazuh via webhooks. This integration ensures that once Wazuh detects suspicious activity, a case is automatically created in TheHive for further analysis and incident management.
