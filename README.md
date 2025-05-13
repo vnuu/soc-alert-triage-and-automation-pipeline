@@ -234,6 +234,7 @@ sudo apt-get update
 sudo apt-get install -y thehive
 ```
 
+---
 
 ## Wazuh and TheHive Configuration
 
@@ -410,6 +411,13 @@ NET START WazuhSvc
 ## Telemetry Generation and Ingestion
 
 To simulate a real-world attack scenario, Mimikatz is executed on the Windows 10 VM. Wazuh was configured to collect logs and detect this malicious behavior. This step validated that the system could generate alerts and feed them into the detection pipeline.
+
+
+
+
+
+
+
 
 ## SOAR Integration & Alert Automation
 
