@@ -415,10 +415,14 @@ In this part, simulated attack activities were carried out on the Windows 10 vir
 
 1. On the Windows 10 VM, locate the ossec configuration file
 ```file
-
+C:\Program Files (x86)\ossec-agent
 ```
 
+2. For good measure, create a backup of the ossec.conf file
+3. 
+```config
 
+```
 
 
 
