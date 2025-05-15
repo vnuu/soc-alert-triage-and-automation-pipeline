@@ -1,4 +1,4 @@
-# Security Alert Automation Pipeline
+# 🚨 Security Alert Automation Pipeline
 
 A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 telemetry (via Sysmon) with cloud-hosted SIEM, SOAR, and case management platforms to automate Mimikatz alert detection, enrichment, and escalation.
 
@@ -251,13 +251,13 @@ After installing TheHive, perform the following steps to configure it properly a
 nano /etc/cassandra/cassandra.yaml
 ```
 
-2. Configure cluster name
+2. Configure `cluster_name`
 ```bash
 cluster_name: 'vnu'
 ```
 **Replace 'vnu' with your desired cluster name to ensure it matches the Cassandra cluster configuration.**
 
-3. Set listen_address and rpc_address as the public IP of TheHive
+3. Set listen_address and `rpc_address` as the public IP of TheHive
 - Listen Address:
 ```bash
 listen_address: 209.97.173.238
@@ -300,22 +300,22 @@ systemctl status cassandra.service
 nano /etc/elasticsearch/elasticsearch.yml
 ```
 
-2. Configure cluster name
+2. Configure `cluster.name`
 ```bash
 cluster.name: vnu
 ```
 
-3. Configure node name (Uncomment and set the node.name parameter)
+3. Configure `node.name` (Uncomment and set the node.name parameter)
 ```bash
 node.name: node-1
 ```
 
-4. Configure network host
+4. Configure `network.host`
 ```bash
 network.host: 209.97.173.238
 ```
 
-5. Configure cluster initial master node
+5. Configure `cluster.initial_master_nodes`
 
 (To start Elasticsearch, you must configure either a discovery seed host or specify an initial master node. For this project, the cluster.initial_master_nodes setting is used to define the initial master node.)
 ```bash
@@ -339,7 +339,7 @@ systemctl status elasticsearch
 
 **TheHive Configuration**
 
-1. Ensure TheHive user and group has access to "/opt/thp"
+1. Ensure TheHive user and group has access to `/opt/thp`
 ```bash
 chown -R thehive:thehive /opt/thp
 ```
@@ -413,16 +413,29 @@ NET START WazuhSvc
 
 In this part, simulated attack activities were carried out on the Windows 10 virtual machine to produce telemetry data. **Mimikatz** is used to mimic credential theft techniques often seen in real-world attacks. The purpose was to evaluate Wazuh’s detection capabilities by observing how it reacts to suspicious behavior. The Windows VM was configured to forward logs to the Wazuh manager. Wazuh’s built-in ruleset was used to identify malicious patterns in the logs. Once the logs were ingested, alerts were generated and made available for further processing and correlation with TheHive.
 
-1. On the Windows 10 VM, locate the ossec configuration file
+### Sysmon Log Ingestion
+
+1. On the Windows 10 VM, locate the `ossec.conf` file
 ```file
-C:\Program Files (x86)\ossec-agent
+C:\Program Files(x86)\ossec-agent
 ```
-
-2. For good measure, create a backup of the ossec.conf file
-3. 
-```config
-
+2. For good measure, create a backup of the `ossec.conf` file
+3. Configure the `ossec.conf` file to allow it to ingest Sysmon logs:
+```text
+<localfile>
+   <location>Microsoft-Windows-Sysmon/Operational</location>
+   <log_format>eventchannel</log_format>
+</localfile>
 ```
+4. Save the configuration and restart the Wazuh service.
+5. Head to the Wazuh Dashboard and check for Sysmon events. (Note: It may take some time for the Sysmon events to load.)
+
+![image](https://github.com/user-attachments/assets/ba427250-86be-45d8-894e-46a858f53535)
+
+### Mimikatz Installation
+
+
+
 
 
 
