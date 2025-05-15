@@ -407,7 +407,7 @@ NET START WazuhSvc
 
 ![wazuh agent installed](https://github.com/user-attachments/assets/13133e77-a3c8-4a7f-ae99-54ebe3d13a22)
 
---
+---
 
 ## Telemetry Generation and Ingestion
 
