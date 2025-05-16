@@ -432,13 +432,72 @@ C:\Program Files(x86)\ossec-agent
 
 ![image](https://github.com/user-attachments/assets/ba427250-86be-45d8-894e-46a858f53535)
 
-### Mimikatz Installation
+### Wazuh Manager Log Ingestion Configuration
+
+1. In Wazuh Manager, ensure that a backup of `ossec.conf` is made
+```bash
+cp /var/ossec/etc/ossec.conf ~/ossec-backup.conf
+```
+
+2. In `ossec.conf`, set the following parameters to `yes`
+```nano
+<logall>yes</logall>
+<logall_json>yes</logall_json>
+```
+
+3. Save the configuration and restart the Wazuh Manager service.
+4. Check for the archived logs called `archives.json` and `archives.log`:
+```bash
+cd /var/ossec/logs/archives/
+```
+
+4. Open the `filebeat.yml` file to configure Wazuh to ingest these logs.
+```bash
+nano /etc/filebeat/filebeat.yml
+```
+
+5. In the `filebeat.modules` section, set the `archives` parameter to `true`
+
+![image](https://github.com/user-attachments/assets/848068a9-51ab-4755-8a68-a398585f00c4)
+
+6. Save the configuration and restart the Filebeat service.
+
+### Wazuh Index Creation
+
+1. On the Wazuh Dashboard, under the "Management" section in the sidebar menu, click on "Stack Management" and then select "Index Patterns".
+2. Create an index pattern and name it as `wazuh-archives-**`.
+3. Select `timestamp` for the time field and click on the `Create index pattern` button.
+
+![image](https://github.com/user-attachments/assets/87bc2357-6d8f-48ef-9067-c926abbde990)
+
+4. Head to "Discover" and change the index pattern to the archives to view the events.
+
+![image](https://github.com/user-attachments/assets/45b889ee-7a6f-4878-9f06-fe999b647df9)
 
 
+### Mimikatz Installation and Testing
 
+1. On the Windows 10 VM, download and extract [Mimikatz](https://github.com/gentilkiwi/mimikatz/releases/tag/2.2.0-20220919).
+2. Run Powershell as Administrator and run Mimikatz.
+- Head to Mimikatz installed directory.
+- Run `Mimikatz.exe`.
 
+![mimkatzexe](https://github.com/user-attachments/assets/048beaba-fd23-4faf-830c-d0c38e14f76c)
 
+3. In Discover, query for Mimikatz in the search bar. Mimikatz event logs should now be shown. 
 
+![image](https://github.com/user-attachments/assets/51ae2604-c8a9-4e50-b3c3-17ab851ee1e7)
+
+**Troubleshooting Tips:**
+- **Try running Mimikatz a few times**
+- **It might take a while for events to start flowing in. To troubleshoot this, you can `cat` the `archives.log` file in Wazuh Manager and `grep` for "mimikatz" and check to see if the logs are being generated or not.**
+```bash
+cat /var/ossec/logs/archives/archives.log | grep -i mimikatz
+```
+
+![image](https://github.com/user-attachments/assets/2838ef99-de58-4096-beee-5d3c39530fe8)
+
+- **If Mimikatz is still not showing in Wazuh but its appearing in `archives.log`, try forcing ingestion by restarting the Wazuh Manager service (NOTE: Only do this in a demo environment, not in production)**
 
 ## SOAR Integration & Alert Automation
 
