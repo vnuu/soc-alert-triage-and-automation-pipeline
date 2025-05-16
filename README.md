@@ -499,6 +499,39 @@ cat /var/ossec/logs/archives/archives.log | grep -i mimikatz
 
 - If Mimikatz is still not showing in Wazuh but its appearing in `archives.log`, try forcing ingestion by restarting the Wazuh Manager service **(NOTE: Only do this in a demo environment, not in production)**
 
+
+### Rule Creation
+
+1. On the homepage, select Management, then under Administration, click on Rules.
+2. Click on Manage Rule Files at the top right corner.
+3. Click on Custom Rules.
+4. Click on the edit icon for `local_rules.xml`.
+5. Add a custom rule for Mimikatz:
+- Start by creating a `<rule>` tag and assign a unique `id`. Avoid using IDs that are already in use — custom rules often start from 100000 onwards.
+- Set the `level` to define the severity of the event.  
+- Inside the rule, use `<if_group>` to specify the group of logs it applies to. In this case, it would be `sysmon_event1`.
+- Add a `<field>` to specify the condition. Use the `win.eventdata.originalFileName` field and a case-insensitive regular expression `(pcre2)` to match `mimikatz.exe`. ( `win.eventdata.originalFileName` is used because it reflects the original name of the binary, which stays the same even if the attacker renames the file.)
+- Write a short and clear `<description>` to indicate what the rule detects — for example, "Mimikatz usage detected".
+- Add a `<mitre>` tag and include the relevant MITRE ATT&CK technique ID — for Mimikatz, this is T1003 (Credential Dumping).
+- Ensure the rule block is structured and indented properly.
+- The rule block for Mimikatz should look like this:
+```xml
+ <rule id="100002" level="15">
+    <if_group>sysmon_event1</if_group>
+    <field name="win.eventdata.originalFileName" type="pcre2">(?i)mimikatz\.exe</field>
+    <description>Mimikatz usage detected</description>
+    <mitre>
+      <id>T1003</id>
+    </mitre>
+ </rule>
+```
+6. Save the XML file and restart the Wazuh Manager when prompted.
+7. Rerun `Mimikatz.exe` on the Windows 10 VM and refresh the Wazuh Dashboard.
+8. The Mimikatz alert should now been shown in the Security Events section:
+
+![image](https://github.com/user-attachments/assets/152e5330-b031-4b61-8f8a-217401ef950b)
+
+
 ## SOAR Integration & Alert Automation
 
 Shuffle, an open-source SOAR tool, was integrated into the environment to automate alert handling. When Wazuh detects an alert, it is forwarded to TheHive via Shuffle. An automated workflow was created to send email notifications to a designated SOC analyst.
