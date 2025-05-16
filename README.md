@@ -489,15 +489,15 @@ nano /etc/filebeat/filebeat.yml
 ![image](https://github.com/user-attachments/assets/51ae2604-c8a9-4e50-b3c3-17ab851ee1e7)
 
 **Troubleshooting Tips:**
-- **Try running Mimikatz a few times**
-- **It might take a while for events to start flowing in. To troubleshoot this, you can `cat` the `archives.log` file in Wazuh Manager and `grep` for "mimikatz" and check to see if the logs are being generated or not.**
+- Try running Mimikatz a few times
+- It might take a while for events to start flowing in. To troubleshoot this, you can `cat` the `archives.log` file in Wazuh Manager and `grep` for "mimikatz" and check to see if the logs are being generated or not.
 ```bash
 cat /var/ossec/logs/archives/archives.log | grep -i mimikatz
 ```
 
 ![image](https://github.com/user-attachments/assets/2838ef99-de58-4096-beee-5d3c39530fe8)
 
-- **If Mimikatz is still not showing in Wazuh but its appearing in `archives.log`, try forcing ingestion by restarting the Wazuh Manager service (NOTE: Only do this in a demo environment, not in production)**
+- If Mimikatz is still not showing in Wazuh but its appearing in `archives.log`, try forcing ingestion by restarting the Wazuh Manager service **(NOTE: Only do this in a demo environment, not in production)**
 
 ## SOAR Integration & Alert Automation
 
