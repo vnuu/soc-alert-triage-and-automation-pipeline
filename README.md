@@ -51,7 +51,7 @@ To simulate real-world attacker and endpoint behavior, a dedicated Windows 10 vi
 
 **Sysmon**
 
-**Sysmon** is installed to generate detailed Windows event logs like process creation, network connections, and file changes. In this project, it's used to capture security events when Mimikatz is run, so Wazuh can detect it and automate responses through TheHive and Shuffle.
+**Sysmon is installed to generate detailed Windows event logs like process creation, network connections, and file changes. In this project, it's used to capture security events when Mimikatz is run, so Wazuh can detect it and automate responses through TheHive and Shuffle.**
 
 1. Download Sysmon from https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon
 2. Click on the **Download Sysmon** link to download a ZIP file.
@@ -103,7 +103,7 @@ To simulate real-world attacker and endpoint behavior, a dedicated Windows 10 vi
 
 ### 2. Wazuh and TheHive
 
-In this part of the project, two virtual machines (VMs) were set up in DigitalOcean to host Wazuh (for SIEM) and TheHive (for case management). These VMs are configured to communicate with each other securely with only the necessary ports open through firewall rules.
+**In this part of the project, two virtual machines (VMs) were set up in DigitalOcean to host Wazuh (for SIEM) and TheHive (for case management). These VMs are configured to communicate with each other securely with only the necessary ports open through firewall rules.**
 
 ### Wazuh and TheHive VM Setup
 
@@ -157,7 +157,7 @@ apt-get update && apt-get upgrade
 ```bash
 curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
 ```
-- Extract Wazuh Credentials (**Be sure to take note of the credentials. These will be used to log into the Wazuh Dashboard**)
+- Extract Wazuh Credentials **(Be sure to take note of the credentials. These will be used to log into the Wazuh Dashboard)**
 ```bash
 sudo tar -xvf wazuh-install-files.tar
 ```
@@ -238,7 +238,7 @@ sudo apt-get install -y thehive
 
 ## Wazuh and TheHive Configuration
 
-Wazuh was configured as the SIEM solution to detect potential security events based on predefined rules. TheHive was set up to receive alerts from Wazuh via webhooks. This integration ensures that once Wazuh detects suspicious activity, a case is automatically created in TheHive for further analysis and incident management.
+**Wazuh was configured as the SIEM solution to detect potential security events based on predefined rules. TheHive was set up to receive alerts from Wazuh via webhooks. This integration ensures that once Wazuh detects suspicious activity, a case is automatically created in TheHive for further analysis and incident management.**
 
 ### TheHive 5 Configuration
 
@@ -411,7 +411,7 @@ NET START WazuhSvc
 
 ## Telemetry Generation and Ingestion
 
-In this part, simulated attack activities were carried out on the Windows 10 virtual machine to produce telemetry data. **Mimikatz** is used to mimic credential theft techniques often seen in real-world attacks. The purpose was to evaluate Wazuh’s detection capabilities by observing how it reacts to suspicious behavior. The Windows VM was configured to forward logs to the Wazuh manager. Wazuh’s built-in ruleset was used to identify malicious patterns in the logs. Once the logs were ingested, alerts were generated and made available for further processing and correlation with TheHive.
+**In this part, simulated attack activities were carried out on the Windows 10 virtual machine to produce telemetry data. **Mimikatz** is used to mimic credential theft techniques often seen in real-world attacks. The purpose was to evaluate Wazuh’s detection capabilities by observing how it reacts to suspicious behavior. The Windows VM was configured to forward logs to the Wazuh manager. Wazuh’s built-in ruleset was used to identify malicious patterns in the logs. Once the logs were ingested, alerts were generated and made available for further processing and correlation with TheHive.**
 
 ### Sysmon Log Ingestion
 
