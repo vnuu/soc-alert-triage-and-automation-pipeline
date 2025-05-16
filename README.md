@@ -1,6 +1,6 @@
 # 🚨 Security Alert Automation Pipeline
 
-A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 telemetry (via Sysmon) with cloud-hosted SIEM, SOAR, and case management platforms to automate Mimikatz alert detection, enrichment, and escalation.
+**A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 telemetry (via Sysmon) with cloud-hosted SIEM, SOAR, and case management platforms to automate Mimikatz alert detection, enrichment, and escalation.**
 
 ---
 
@@ -16,13 +16,13 @@ A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 tele
 
 ## Objectives
 
-The goal of this project is to design and implement a fully automated SOC alert triage pipeline that integrates endpoint telemetry (via Sysmon) with a cloud-hosted SIEM (Wazuh), SOAR automation (Shuffle), and case management (TheHive) platforms. The pipeline automates the detection, enrichment, and escalation of Mimikatz alerts in a controlled environment, simulating real-world attack scenarios.
+**The goal of this project is to design and implement a fully automated SOC alert triage pipeline that integrates endpoint telemetry (via Sysmon) with a cloud-hosted SIEM (Wazuh), SOAR automation (Shuffle), and case management (TheHive) platforms. The pipeline automates the detection, enrichment, and escalation of Mimikatz alerts in a controlled environment, simulating real-world attack scenarios.**
 
 ---
 
 ## Application and VM Setup
 
-In this phase, virtual machines were provisioned to host the core components of the SOC automation stack. This included setting up separate VMs for the Wazuh SIEM server and TheHive incident response platform. Supporting software and dependencies were also installed to ensure all components could run smoothly in an isolated lab environment.
+**In this phase, virtual machines were provisioned to host the core components of the SOC automation stack. This included setting up separate VMs for the Wazuh SIEM server and TheHive incident response platform. Supporting software and dependencies were also installed to ensure all components could run smoothly in an isolated lab environment.**
 
 ### 1. Windows 10 VM 
 
