@@ -548,5 +548,5 @@ Shuffle, an open-source SOAR tool, was integrated into the environment to automa
 
 1. Create a [Shuffle](https://shuffler.io/) account.
 2. Create a Workflow.
-3.  
+3. 
 
