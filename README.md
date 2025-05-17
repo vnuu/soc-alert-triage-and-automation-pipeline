@@ -533,7 +533,7 @@ cat /var/ossec/logs/archives/archives.log | grep -i mimikatz
     </mitre>
  </rule>
 ```
-6. Save the XML file and restart the Wazuh Manager when prompted.
+6. Save the XML file and restart Wazuh when prompted.
 7. Rerun `Mimikatz.exe` on the Windows 10 VM and refresh the Wazuh Dashboard.
 8. The Mimikatz alert should now been shown in the Security Events section:
 
