@@ -20,6 +20,14 @@
 
 ---
 
+## Architecture Diagram
+
+**This project uses Wazuh, TheHive, and Shuffle to automate threat detection and response. Logs from a Windows 10 machine are sent to the Wazuh Manager, which triggers alerts. These alerts are processed by Shuffle, which enriches the data, sends it to TheHive to create cases, and notifies the SOC analyst by email. Based on the analysis, Shuffle or the analyst can take response actions. The setup helps simulate a basic SOC workflow with automated detection, alerting, and response.**
+
+![image](https://github.com/user-attachments/assets/4c02535d-074d-4b94-92d8-f2fbd2d292ef)
+
+---
+
 ## Application and VM Setup
 
 **In this phase, virtual machines were provisioned to host the core components of the SOC automation stack. This included setting up separate VMs for the Wazuh SIEM server and TheHive incident response platform. Supporting software and dependencies were also installed to ensure all components could run smoothly in an isolated lab environment.**
@@ -535,4 +543,10 @@ cat /var/ossec/logs/archives/archives.log | grep -i mimikatz
 ## SOAR Integration & Alert Automation
 
 Shuffle, an open-source SOAR tool, was integrated into the environment to automate alert handling. When Wazuh detects an alert, it is forwarded to TheHive via Shuffle. An automated workflow was created to send email notifications to a designated SOC analyst.
+
+**Shuffle Setup**
+
+1. Create a [Shuffle](https://shuffler.io/) account.
+2. Create a Workflow.
+3.  
 
