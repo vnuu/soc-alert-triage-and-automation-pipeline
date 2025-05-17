@@ -425,7 +425,7 @@ NET START WazuhSvc
 
 1. On the Windows 10 VM, locate the `ossec.conf` file
 ```file
-C:\Program Files(x86)\ossec-agent
+C:\Program Files (x86)\ossec-agent
 ```
 2. For good measure, create a backup of the `ossec.conf` file
 3. Configure the `ossec.conf` file to allow it to ingest Sysmon logs:
