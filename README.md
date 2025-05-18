@@ -562,9 +562,9 @@ Shuffle, an open-source SOAR tool, was integrated into the environment to automa
 4. SSH into Wazuh Manager and open the `ossec.conf` file.
 5. In `ossec.conf`, place the integration tag and add the Shuffle URL in the `hook_url` tag.
 ```bash
-  </integration>
+  <integration>
     <name>shuffle</name>
-    <hook_url>https://<YOUR_SHUFFLE_URL>/api/v1/hooks/webhook_e7040e76-ba7c-4015-808c-48a0bf285a01</hook_url>
+    <hook_url>(Add URL Here) </hook_url>
     <rule_id>100002</rule_id>
     <alert_format>json</alert_format>
   </integration>
