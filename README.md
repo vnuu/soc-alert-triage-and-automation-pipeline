@@ -544,9 +544,30 @@ cat /var/ossec/logs/archives/archives.log | grep -i mimikatz
 
 Shuffle, an open-source SOAR tool, was integrated into the environment to automate alert handling. When Wazuh detects an alert, it is forwarded to TheHive via Shuffle. An automated workflow was created to send email notifications to a designated SOC analyst.
 
-**Shuffle Setup**
+**Shuffle Integration**
 
-1. Create a [Shuffle](https://shuffler.io/) account.
-2. Create a Workflow.
-3. 
+1. Create a New Workflow
+- Log in to [Shuffle](https://shuffler.io/).
+- Go to the **Workflows** tab.
+- Click **"Create Workflow"**.
+- Enter the workflow details.
+
+2. Add Webhook Trigger
+- From the **Workflow starters** section, drag the **Webhook** block into the canvas.
+- Click on the block and set the **Name** to `Wazuh-Alerts`.
+- Select **Environment** as `cloud`.
+- Copy the **Webhook URI** (This is the endpoint Wazuh will send alerts to).
+
+3. Ensure the action in the "Change Me" icon is set to "Repeat back to me" and the "Call" is set to "$exec"
+4. SSH into Wazuh Manager and open the `ossec.conf` file.
+5. In `ossec.conf`, place the integration tag and add the Shuffle URL in the `hook_url` tag.
+```bash
+  </integration>
+    <name>shuffle</name>
+    <hook_url>https://<YOUR_SHUFFLE_URL>/api/v1/hooks/webhook_e7040e76-ba7c-4015-808c-48a0bf285a01</hook_url>
+    <rule_id>100002</rule_id>
+    <alert_format>json</alert_format>
+  </integration>
+```
+6. 
 
