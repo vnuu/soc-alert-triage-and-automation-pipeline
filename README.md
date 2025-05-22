@@ -688,6 +688,10 @@ Host: $exec.text.win.system.computer
 
 ![emailalert](https://github.com/user-attachments/assets/831eea81-62a0-4d47-974f-0a812662742a)
 
+Final Workflow:
+
+![workflow](https://github.com/user-attachments/assets/e1abc5bb-5c26-4a79-8750-bc0a174adad2)
+
 ## Summary & Skills Gained
 
 The project involved deploying a Windows 10 VM to simulate credential dumping via Mimikatz, with Wazuh configured for Sysmon log ingestion and custom detection rules to identify malicious activity. Alerts were forwarded using Filebeat to TheHive, where Shuffle automated alert enrichment with VirusTotal API integration. This environment enabled hands-on experience in developing detection logic, SIEM-to-SOAR integration, and automated incident response workflows typical of modern SOC operations.
