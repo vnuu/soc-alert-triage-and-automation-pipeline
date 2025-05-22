@@ -651,6 +651,47 @@ $sha256_regex.group_0.#
   "type": "internal"
 }
 ```
-10. Connect Virustotal ato TheHive in the workflow. 
+
+10. Save the workflow.
+11. On DigitalOcean, create a custom firewall rule to allow inbound traffic from all ports under UDP protocol:
+
+![image](https://github.com/user-attachments/assets/42f0904f-0684-46cb-8ec4-e04dd71daa6a)
+
+12. Rerun the workflow.
+
+*TheHive should now be able to generate alerts on Mimikatz:*
+
+![image](https://github.com/user-attachments/assets/1a5bc486-3737-4415-bbbf-a16758faf4aa)
+
+*Alert generated on TheHive dashboard:*
+
+![image](https://github.com/user-attachments/assets/200e35d3-2d0c-4738-9721-631a6b1ee83f)
+
+**Alert Generation via Email**
+
+1. Drag the email application to the workflow and connect it to Virustotal.
+2. Enter a valid email address in the "Recipients" section.
+3. Enter a subject (Ex. "Mimikatz Detected!")
+4. Set the body of the alert to include the time, title and the host of the alert.
+```body
+Time: $exec.text.win.eventdata.utcTime
+Title: $exec.title
+Host: $exec.text.win.system.computer
+```
+5. Save and rerun the workflow.
+
+*The Mimikatz alert should now be sent via email:*
+
+![email_shuffle](https://github.com/user-attachments/assets/0d893133-4898-475e-8702-9c5f1397139f)
+
+*Analyst POV:*
+
+![emailalert](https://github.com/user-attachments/assets/831eea81-62a0-4d47-974f-0a812662742a)
+
+
+
+
+
+
 
 
