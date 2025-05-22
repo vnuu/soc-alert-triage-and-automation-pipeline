@@ -690,16 +690,17 @@ Host: $exec.text.win.system.computer
 
 ## Summary & Skills Gained
 
-This project simulated a credential dumping attack using Mimikatz on a Windows 10 VM to test detection and response capabilities of Wazuh, TheHive, and Shuffle. Wazuh was configured to collect and analyze Sysmon logs with custom detection rules. Alerts were forwarded to TheHive through Shuffle, which automated threat intelligence lookups using VirusTotal. The setup provided practical experience in SIEM monitoring, rule creation, and SOAR-driven incident response, reflecting real-world SOC operations.
+The project involved deploying a Windows 10 VM to simulate credential dumping via Mimikatz, with Wazuh configured for Sysmon log ingestion and custom detection rules to identify malicious activity. Alerts were forwarded using Filebeat to TheHive, where Shuffle automated alert enrichment with VirusTotal API integration. This environment enabled hands-on experience in developing detection logic, SIEM-to-SOAR integration, and automated incident response workflows typical of modern SOC operations.
 
 **Skills Learned:**
-- SIEM log analysis and custom rule development (Wazuh, Sysmon)  
-- Log forwarding and management with Filebeat  
-- Alert automation and orchestration using Shuffle  
-- Integration of threat intelligence services (VirusTotal)  
-- Practical understanding of SOC workflows and incident response automation  
-- Working knowledge of credential dumping attack detection  
-- Hands-on experience with Windows event logs and threat hunting  
+- Sysmon configuration and event log analysis for attack detection  
+- Crafting custom Wazuh rules for behavioral anomaly detection  
+- Configuring Filebeat for reliable log forwarding to SIEM  
+- SOAR orchestration with Shuffle to automate alert triage and enrichment  
+- API integration for threat intelligence (VirusTotal) within incident workflows  
+- End-to-end SIEM-SOAR pipeline implementation for SOC automation  
+- Practical detection and response to credential dumping techniques  
+
 
 
 
