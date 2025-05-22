@@ -688,7 +688,7 @@ Host: $exec.text.win.system.computer
 
 ![emailalert](https://github.com/user-attachments/assets/831eea81-62a0-4d47-974f-0a812662742a)
 
-Final Workflow:
+**Final Workflow:**
 
 ![workflow](https://github.com/user-attachments/assets/e1abc5bb-5c26-4a79-8750-bc0a174adad2)
 
