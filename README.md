@@ -497,6 +497,7 @@ nano /etc/filebeat/filebeat.yml
 ![image](https://github.com/user-attachments/assets/51ae2604-c8a9-4e50-b3c3-17ab851ee1e7)
 
 **Troubleshooting**
+
 If alerts do not appear immediately, rerun the binary multiple times or verify log ingestion using the following command
 ```bash
 cat /var/ossec/logs/archives/archives.log | grep -i mimikatz
