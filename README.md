@@ -483,9 +483,9 @@ nano /etc/filebeat/filebeat.yml
 ![image](https://github.com/user-attachments/assets/45b889ee-7a6f-4878-9f06-fe999b647df9)
 
 
-### Mimikatz Installation and Testing
+### Mimikatz Testing
 
-1. On the Windows 10 VM, download and extract [Mimikatz](https://github.com/gentilkiwi/mimikatz/releases/tag/2.2.0-20220919).
+1. On the Windows 10 VM, download and extract [Mimikatz](https://github.com/gentilkiwi/mimikatz/releases/tag/2.2.0-20220919) (Note: Ensure Windows Defender or other security software is disabled, or add exclusions, as Mimikatz may be flagged as malware.).
 2. Run Powershell as Administrator and run Mimikatz.
 - Head to Mimikatz installed directory.
 - Run `Mimikatz.exe`.
@@ -498,7 +498,7 @@ nano /etc/filebeat/filebeat.yml
 
 **Troubleshooting**
 
-If alerts do not appear immediately, rerun the binary multiple times or verify log ingestion using the following command
+- If alerts do not appear immediately, rerun the binary multiple times or verify log ingestion using the following command
 ```bash
 cat /var/ossec/logs/archives/archives.log | grep -i mimikatz
 ```
@@ -688,8 +688,19 @@ Host: $exec.text.win.system.computer
 
 ![emailalert](https://github.com/user-attachments/assets/831eea81-62a0-4d47-974f-0a812662742a)
 
+## Summary & Skills Gained
 
-## Project Outcomes
+This project simulated a credential dumping attack using Mimikatz on a Windows 10 VM to test detection and response capabilities of Wazuh, TheHive, and Shuffle. Wazuh was configured to collect and analyze Sysmon logs with custom detection rules. Alerts were forwarded to TheHive through Shuffle, which automated threat intelligence lookups using VirusTotal. The setup provided practical experience in SIEM monitoring, rule creation, and SOAR-driven incident response, reflecting real-world SOC operations.
+
+**Skills Learned:**
+- SIEM log analysis and custom rule development (Wazuh, Sysmon)  
+- Log forwarding and management with Filebeat  
+- Alert automation and orchestration using Shuffle  
+- Integration of threat intelligence services (VirusTotal)  
+- Practical understanding of SOC workflows and incident response automation  
+- Working knowledge of credential dumping attack detection  
+- Hands-on experience with Windows event logs and threat hunting  
+
 
 
 
