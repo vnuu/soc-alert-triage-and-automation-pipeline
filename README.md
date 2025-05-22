@@ -496,9 +496,8 @@ nano /etc/filebeat/filebeat.yml
 
 ![image](https://github.com/user-attachments/assets/51ae2604-c8a9-4e50-b3c3-17ab851ee1e7)
 
-**Troubleshooting Tips:**
-- Try running Mimikatz a few times
-- It might take a while for events to start flowing in. To troubleshoot this, you can `cat` the `archives.log` file in Wazuh Manager and `grep` for "mimikatz" and check to see if the logs are being generated or not.
+**Troubleshooting**
+If alerts do not appear immediately, rerun the binary multiple times or verify log ingestion using the following command
 ```bash
 cat /var/ossec/logs/archives/archives.log | grep -i mimikatz
 ```
@@ -570,7 +569,7 @@ Shuffle, an open-source SOAR tool, was integrated into the environment to automa
   </integration>
 ```
 6. Restart the Wazuh manager.
-7. Rereun Mimikatz on the VM.
+7. Rerun Mimikatz on the VM.
 8. Head to the Shuffle instance, click on the Webhook and click "Start" in the "Parameters" section.
 9. Run the Workflow and click on the "Show Executions" button.
 
@@ -689,7 +688,7 @@ Host: $exec.text.win.system.computer
 ![emailalert](https://github.com/user-attachments/assets/831eea81-62a0-4d47-974f-0a812662742a)
 
 
-
+## Project Outcomes
 
 
 
