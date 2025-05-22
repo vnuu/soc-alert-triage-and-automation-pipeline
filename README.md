@@ -111,7 +111,7 @@ To simulate real-world attacker and endpoint behavior, a dedicated Windows 10 vi
 
 ### 2. Wazuh and TheHive
 
-**In this part of the project, two virtual machines (VMs) were set up in DigitalOcean to host Wazuh (for SIEM) and TheHive (for case management). These VMs are configured to communicate with each other securely with only the necessary ports open through firewall rules.**
+**In this part of the project, two cloud-based virtual machines (VMs) were set up on DigitalOcean, one hosting Wazuh for SIEM and the other hosting TheHive for case management. They were securely configured to communicate with each other, with only the necessary ports open through firewall rules.**
 
 ### Wazuh and TheHive VM Setup
 
@@ -617,8 +617,40 @@ $sha256_regex.group_0.#
 
 ![image](https://github.com/user-attachments/assets/f14c6c0c-f9b9-4cf5-b8c9-c69a68df2fb9)
 
+**TheHive Alert Creation**
 
+1. Select "TheHive" in the apps section and drag it to the workflow.
+2. Head to TheHive's dashboard and login using the default credentials.
+3. On the dashboard, click on the "+" button on the top left and create an organization.
+4. Select the organization and add two users under the profile of "analyst":
+- Set the first user's Type as "Normal". Then, click on "Preview" and set the user's password.
+- Set the second user's Type as "Service". Then, click on "Preview", create an API key for this user and copy it.
 
+![image](https://github.com/user-attachments/assets/f58345ca-f1b6-4cbe-949d-48f269635c66)
 
+5. Log out of the admin account and log into TheHive using the credentials of the first created user.
+6. On Shuffle, click on TheHive and select the "+" button next to Authenticate.
+7. Authenticate TheHive by copying over the generated API key.
+8. Under URL, type in the public IP of TheHive instance and click "Submit".
+9. Click on "Advanced" and modify the body of TheHive for the alert generation. Below is an example:
+```
+{
+  "description": "Mimikats Detected on host: $exec.text.win.system.computer",
+  "flag": false,
+  "pap": 2,
+  "time": "$exec.text.win.eventdata.utcTime",
+  "title": "$exec.title",
+  "host": "$exec.text.win.system.computer",
+  "severity": 2,
+  "source": "Wazuh",
+  "sourceRef": "Rule 100003",
+  "summary": "Mimikatz detected on host: $exec.text.win.system.computer ProcessID: $exec.text.win.system.processID CommandLine: $exec.text.win.eventdata.commandLine",
+  "tags": ["T1003"],
+  "title": "Mimikatz Detected",
+  "tlp": 2,
+  "type": "internal"
+}
+```
+10. Connect Virustotal ato TheHive in the workflow. 
 
 
