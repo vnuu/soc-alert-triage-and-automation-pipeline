@@ -553,7 +553,7 @@ Shuffle, an open-source SOAR tool, was integrated into the environment to automa
 - Enter the workflow details.
 
 2. Add Webhook Trigger
-- From the **Workflow starters** section, drag the **Webhook** block into the canvas.
+- From the **Workflow starters** section, drag the **Webhook** node into the canvas.
 - Click on the block and set the **Name** to `Wazuh-Alerts`.
 - Select **Environment** as `cloud`.
 - Copy the **Webhook URI** (This is the endpoint Wazuh will send alerts to).
@@ -580,7 +580,7 @@ Shuffle, an open-source SOAR tool, was integrated into the environment to automa
 
 **Regex Capture**
 
-1. Click on "Change Me" and set the name to "SHA256 Regex".
+1. Click on the "Change Me" node and set the name to "SHA256 Regex".
 2. Set the action to "Regex capture group".
 3. For the input, select the `hashes` field from the Execution Argument section. The input should look like this:
 ```
@@ -599,8 +599,8 @@ SHA256=([0-9A-Fa-f]{64})
 **Virustotal Reputation Check**
 
 1. Create an account for [Virustotal](https://www.virustotal.com/gui/home/upload) and obtain the API key.
-2. On Shuffle, search for "Virustotal" and select it.
-3. Select and drag "Virustotal" and place it on the workflow.
+2. On Shuffle, search for the "Virustotal" node and select it.
+3. Select and drag the "Virustotal" node and place it on the workflow.
 4. Set the action to "Get a hash report". (Ensure Virustotal is fully activated and refresh the workflow to see the actions.)
 5. Authenticate Virustotal by pasting in the obtained API key.
 6. Set the "Id" as the regex output:
@@ -669,7 +669,7 @@ $sha256_regex.group_0.#
 
 **Alert Generation via Email**
 
-1. Drag the email application to the workflow and connect it to Virustotal.
+1. Drag the email node to the workflow and connect it to the Virustotal node.
 2. Enter a valid email address in the "Recipients" section.
 3. Enter a subject (Ex. "Mimikatz Detected!")
 4. Set the body of the alert to include the time, title and the host of the alert.
@@ -694,7 +694,7 @@ Host: $exec.text.win.system.computer
 
 ## Summary & Skills Gained
 
-The project involved deploying a Windows 10 VM to simulate credential dumping via Mimikatz, with Wazuh configured for Sysmon log ingestion and custom detection rules to identify malicious activity. Alerts were forwarded using Filebeat to TheHive, where Shuffle automated alert enrichment with VirusTotal API integration. This environment enabled hands-on experience in developing detection logic, SIEM-to-SOAR integration, and automated incident response workflows typical of modern SOC operations.
+This project deployed a Windows 10 VM to simulate credential dumping using Mimikatz. Wazuh was configured to ingest Sysmon logs with custom detection rules to identify malicious activity. Alerts were forwarded via Filebeat to TheHive, while Shuffle automated alert enrichment through VirusTotal API integration. This setup provided hands-on experience in developing detection logic, integrating SIEM with SOAR platforms, and building automated incident response workflows typical of modern SOC operations.
 
 **Skills Learned:**
 - Sysmon configuration and event log analysis for attack detection  
