@@ -1,12 +1,12 @@
 # Security Alert Automation Pipeline
 
-**A complete, end-to-end SOC alert triage pipeline that integrates Windows 10 telemetry (via Sysmon) with cloud-hosted SIEM, SOAR, and case management platforms to automate Mimikatz alert detection, enrichment, and escalation.**
+**An end-to-end SOC alert triage pipeline that integrates Windows 10 telemetry (via Sysmon) with cloud-hosted SIEM, SOAR, and case management platforms to automate Mimikatz alert detection, enrichment, and escalation to an analyst.**
 
 ---
 
 ## Tools & Technologies
 
-- **Windows 10 VM** with Sysmon
+- **Windows 10 VM** with Sysmon (Telemetry)
 - **Wazuh** (SIEM)
 - **Shuffle** (SOAR automation)
 - **TheHive** (Case management)
@@ -16,13 +16,13 @@
 
 ## Objectives
 
-**The goal of this project is to design and implement a fully automated SOC alert triage pipeline that integrates endpoint telemetry (via Sysmon) with a cloud-hosted SIEM (Wazuh), SOAR automation (Shuffle), and case management (TheHive) platforms. The pipeline automates the detection, enrichment, and escalation of Mimikatz alerts in a controlled environment, simulating real-world attack scenarios.**
+**The goal of this project is to design and implement a fully automated SOC alert triage pipeline that integrates endpoint telemetry (via Sysmon) with a cloud-hosted SIEM (Wazuh), SOAR automation (Shuffle), and case management (TheHive) platforms. The pipeline automates the detection and enrichment of Mimikatz alerts in a controlled environment, simulating real-world attack scenarios.**
 
 ---
 
 ## Architecture Diagram
 
-**This project uses Wazuh, TheHive, and Shuffle to automate threat detection and response. Logs from a Windows 10 machine are sent to the Wazuh Manager, which triggers alerts. These alerts are processed by Shuffle, which enriches the data, sends it to TheHive to create cases, and notifies the SOC analyst by email. Based on the analysis, Shuffle or the analyst can take response actions. The setup helps simulate a basic SOC workflow with automated detection, alerting, and response.**
+**This project uses Wazuh, TheHive, and Shuffle to automate threat detection and response. Logs from a Windows 10 machine are sent to the Wazuh Manager, which triggers alerts. These alerts are processed by Shuffle, which enriches the data, sends it to TheHive to create cases, and notifies the SOC analyst by email. Based on the analysis, Shuffle or the analyst can take response actions. The setup helps simulate a basic SOC workflow with automated detection and alerting.**
 
 ![image](https://github.com/user-attachments/assets/4c02535d-074d-4b94-92d8-f2fbd2d292ef)
 
