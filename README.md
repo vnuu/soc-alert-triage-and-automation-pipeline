@@ -1,4 +1,4 @@
-# Security Alert Triage & Automation Pipeline
+# SOC Alert Triage & Automation Pipeline
 
 **An end-to-end SOC alert triage pipeline that integrates Windows 10 telemetry (via Sysmon) with cloud-hosted SIEM, SOAR, and case management platforms to automate Mimikatz alert detection, enrichment, and escalation to an analyst.**
 
