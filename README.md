@@ -505,7 +505,7 @@ cat /var/ossec/logs/archives/archives.log | grep -i mimikatz
 
 ![image](https://github.com/user-attachments/assets/2838ef99-de58-4096-beee-5d3c39530fe8)
 
-- If Mimikatz is still not showing in Wazuh but its appearing in `archives.log`, try forcing ingestion by restarting the Wazuh Manager service **(NOTE: Only do this in a demo environment, not in production)**
+- If Mimikatz is still not showing in Wazuh but its appearing in `archives.log`, try forcing ingestion by restarting the Wazuh Manager service.
 
 
 ### Rule Creation
